@@ -45,6 +45,14 @@ async function workout() {
   }
 };
 
+const allPromisesWorkout = () => {
+  Promise.all([stretch(), runOnTreadmill(), liftWeights()])
+    .then((promises) => console.log("promises ", promises))
+    .catch((error) => console.log(error));
+};
+
+allPromisesWorkout();
+
 /* ============================ TEST YOUR CODE ============================
 
 Run the file (`node phase-1.js`) and check your output against the expected
